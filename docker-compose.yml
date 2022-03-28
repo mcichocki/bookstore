@@ -1,0 +1,88 @@
+version: '3'
+
+networks:
+    bookstore-dev:
+services:
+    # nginx
+    bookstore-nginx-service:
+        image: nginx:stable-alpine
+        container_name: bookstore-nginx-container
+        ports:
+            - "8088:80"
+        environment:
+            - TZ=Europe/Warsaw    
+        volumes:
+            - ./app:/var/www/project
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - "/etc/localtime:/etc/localtime:ro"
+            - "/etc/timezone:/etc/timezone:ro"
+        depends_on:
+            - bookstore-php-service
+            - bookstore-mysql-service
+        networks:
+            - bookstore-dev
+
+    # php
+    bookstore-php-service:
+        build:
+            context: .
+            dockerfile: ./php/Dockerfile
+        container_name: bookstore-php-container
+        ports:
+            - "9008:9000"
+        volumes:
+            - ./app:/var/www/project
+            - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+        networks:
+            - bookstore-dev
+
+    # mysql
+    bookstore-mysql-service:
+        image: mysql:8
+        container_name: bookstore-mysql-container
+        ports:
+            - "4308:3306"
+        volumes:
+            - ./mysql:/var/lib/mysql
+        command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+        restart: always # always restart unless stopped manually
+        environment:
+            #MYSQL_USER: root
+            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_PASSWORD: secret
+        networks:
+            - bookstore-dev
+
+    # node
+    bookstore-node-service:
+        build:
+            context: .
+            dockerfile: ./node/Dockerfile
+        container_name: bookstore-node-container
+        volumes:
+            - ./app:/var/www/project
+        working_dir: /var/www/project
+        networks:
+            - bookstore-dev
+
+    # rabbitmq
+    bookstore-rabbitmq-service:
+        #    image: rabbitmq
+        build:
+            context: .
+            dockerfile: rabbitmq/Dockerfile
+        container_name: bookstore-rabbitmq-container
+        ports:
+            - "15672:15672"
+            - "5672:5672"
+        healthcheck:
+            test: [ "CMD", "curl", "-f", "http://localhost:15672" ]
+            interval: 30s
+            timeout: 10s
+            retries: 5
+        volumes:
+            - rabbitmq-data:/var/lib/rabbitmq
+        networks:
+            - bookstore-dev
+volumes:
+    rabbitmq-data:
