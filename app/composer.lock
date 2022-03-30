@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1ebf2cc8676ff3043e89807188b4006",
+    "content-hash": "7ef9824136743ea4bce49c20c8a98d81",
     "packages": [
         {
             "name": "api-platform/core",
@@ -219,16 +219,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.216.2",
+            "version": "3.216.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "9e09386c3a5b313eeb324490beff4eb843ed339d"
+                "reference": "5ec2b55c7e2afdaf173348841440076c8e2d2acb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9e09386c3a5b313eeb324490beff4eb843ed339d",
-                "reference": "9e09386c3a5b313eeb324490beff4eb843ed339d",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5ec2b55c7e2afdaf173348841440076c8e2d2acb",
+                "reference": "5ec2b55c7e2afdaf173348841440076c8e2d2acb",
                 "shasum": ""
             },
             "require": {
@@ -304,9 +304,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.216.2"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.216.3"
             },
-            "time": "2022-03-25T18:17:03+00:00"
+            "time": "2022-03-28T18:16:18+00:00"
         },
         {
             "name": "brick/math",
@@ -1809,16 +1809,16 @@
         },
         {
             "name": "easycorp/easyadmin-bundle",
-            "version": "v4.0.9",
+            "version": "v4.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EasyCorp/EasyAdminBundle.git",
-                "reference": "a582d4590499eab9832cb684c5da61882c92aa73"
+                "reference": "cf8a05e7dd00648c817c404c7f4e8ec70af61706"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/a582d4590499eab9832cb684c5da61882c92aa73",
-                "reference": "a582d4590499eab9832cb684c5da61882c92aa73",
+                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/cf8a05e7dd00648c817c404c7f4e8ec70af61706",
+                "reference": "cf8a05e7dd00648c817c404c7f4e8ec70af61706",
                 "shasum": ""
             },
             "require": {
@@ -1885,7 +1885,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EasyCorp/EasyAdminBundle/issues",
-                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.0.9"
+                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.0.10"
             },
             "funding": [
                 {
@@ -1893,7 +1893,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-09T19:03:17+00:00"
+            "time": "2022-03-28T17:20:52+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -3473,16 +3473,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "c08946968bda74869e696982b0af40a9a8784c84"
+                "reference": "aa111aa1fecbc436f01e5439d88906bd3b612027"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/c08946968bda74869e696982b0af40a9a8784c84",
-                "reference": "c08946968bda74869e696982b0af40a9a8784c84",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/aa111aa1fecbc436f01e5439d88906bd3b612027",
+                "reference": "aa111aa1fecbc436f01e5439d88906bd3b612027",
                 "shasum": ""
             },
             "require": {
@@ -3511,9 +3511,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.3.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.4.0"
             },
-            "time": "2022-03-28T07:53:31+00:00"
+            "time": "2022-03-28T10:52:48+00:00"
         },
         {
             "name": "psr/cache",

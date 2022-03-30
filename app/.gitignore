@@ -7,6 +7,7 @@
 /public/bundles/
 /var/
 /vendor/
+/php/ca-certificates/
 ###< symfony/framework-bundle ###
 
 ###> symfony/webpack-encore-bundle ###

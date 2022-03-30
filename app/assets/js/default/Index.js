@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import axios from 'axios';
+import ModalElement from './components/ModalElement';
+//import Counter from './components/Counter';
 
 const routes = require('../../../public/js/fos_js_routes.json');
 import Routing from '/public/bundles/fosjsrouting/js/router.min.js';
@@ -18,14 +20,14 @@ class Index extends React.Component
 {
     constructor(props) {
         super(props);
-        this.state = { books: []};
+        this.state = {
+            books: [],
+            counter: 0
+        };
         this.getBooks();
+
     }
 
-    // componentDidMount() {
-    // }
-
-    // read Books
     getBooks()
     {
         axios.get(Routing.generate("api_books"))
@@ -36,6 +38,12 @@ class Index extends React.Component
         );
     }
 
+    increment = () => {
+        this.setState({
+            counter: this.state.counter+1
+        });
+    }
+
     render() {
         return (
             <>
@@ -43,6 +51,12 @@ class Index extends React.Component
                 <ul>
                     {this.state.books.map(book => <li key={book.id}>{book.title}</li>)}
                 </ul>
+                <ModalElement/>
+
+                <div>
+                    <p>{this.state.counter}</p>
+                    <button className="btn btn-sm btn-primary" onClick={this.increment}>Increment</button>
+                </div>
             </>
         );
     }

@@ -13,6 +13,9 @@ RUN apt-get update && apt-get install -y zlib1g-dev g++ git libpng-dev librabbit
 
 WORKDIR /var/www/project
 
+COPY php/ca-certificates/ /usr/local/share/ca-certificates/
+RUN update-ca-certificates
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN curl -sS https://get.symfony.com/cli/installer | bash
 RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony

@@ -1,1 +1,1 @@
-docker exec -it kmp-php-container bin/console assets:install --symlink public
+docker exec -it bookstore-php-container bin/console assets:install --symlink public
