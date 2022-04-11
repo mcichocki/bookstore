@@ -1,22 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDom from 'react-dom';
 import axios from 'axios';
-import ModalElement from './components/ModalElement';
-//import Counter from './components/Counter';
+
+import Navbar from './components/Navbar';
+import Header from './components/Header';
+import Books from './components/Books';
+import Footer from './components/Footer';
 
 const routes = require('../../../public/js/fos_js_routes.json');
 import Routing from '/public/bundles/fosjsrouting/js/router.min.js';
 
-Routing.setRoutingData(routes);
+import 'bootstrap/dist/js/bootstrap.js';
 
-class Header extends React.Component
-{
+Routing.setRoutingData(routes);
+class Website extends React.Component {
     render() {
-        return (<h2>Strona główna</h2>);
+        return(
+            <>
+                <header>
+                    <Navbar />
+                    <Header />
+                </header>
+                <Books />
+                <footer>
+                    <Footer/>
+                </footer>
+            </>
+        );
     }
 }
 
-class Index extends React.Component
+ReactDom.render(<Website />, document.getElementById('root'));
+
+
+
+
+
+// Komponent funkcyjny + props
+/*
+export function Welcome(props) {
+    const [name, setName] = useState("dupa");
+    return(
+        <p>Welcome, {props.name}</p>
+    );
+}
+
+
+
+class Website extends React.Component
 {
     constructor(props) {
         super(props);
@@ -53,6 +84,8 @@ class Index extends React.Component
                 </ul>
                 <ModalElement/>
 
+                <Welcome name="Mateusz" />
+
                 <div>
                     <p>{this.state.counter}</p>
                     <button className="btn btn-sm btn-primary" onClick={this.increment}>Increment</button>
@@ -61,5 +94,4 @@ class Index extends React.Component
         );
     }
 }
-
-ReactDom.render(<Index />, document.getElementById('root'));
+*/

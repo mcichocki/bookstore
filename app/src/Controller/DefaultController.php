@@ -64,6 +64,11 @@ class DefaultController extends AbstractController
                 "id" => 6,
                 "title" => "Język C++. Szkoła programowania.",
                 "author" => "Stephen Prata"
+            ],
+            [
+                "id" => 7,
+                "title" => "Język C++. Szkoła programowania 2.",
+                "author" => "Stephen Prata"
             ]
         ];
 

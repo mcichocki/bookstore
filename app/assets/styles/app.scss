@@ -1,5 +1,97 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+$white: #fff;
+$red: #ce0422;
+
 body {
-    background-color: #fff;
+    background-color: #ebebeb;
+}
+
+.nav-background {
+    background: $red;
+}
+
+.btn-danger {
+    background: $red;
+}
+
+.header-main {
+    padding: 30px;
+    background-color: $white;
+    box-shadow: 0 0 10px 0 #a9b6bf;
+}
+
+.bottom-line {
+    border-bottom: 1px solid #e2e8ec;
+    margin: 10px 0 0;
+}
+
+.offer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.page-menu {
+    margin-left: 0;
+    padding-left: 0;
+    max-width: 230px;
+}
+
+
+.page-menu li {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid #dfdfdf;
+    //border-top: 1px solid #dfdfdf;
+    font-size: 16px;
+}
+
+.page-menu li a {
+    color: #000;
+    text-decoration: none;
+    text-align: left;
+    display: block;
+    padding: 5px 20px;
+    line-height: 22px;
+}
+
+.page-menu li a:hover {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.book-type-price {
+    max-height: 300px;
+    border: 1px solid #d4001c;
+    box-shadow: -3px 0 #d4001c, 0 0 5px rgb(0 0 0 / 30%);
+}
+
+.image-cover {
+    box-shadow: 0 0 5px rgb(0 0 0 / 50%);
+    background-color: #c7c7c7;
+}
+
+.promotion {
+    background-color: #e4001e;
+    color: #fff;
+    padding: 0 10px;
+    width: 84px;
+    line-height: 25px;
+    font-size: 15px;
+}
+
+.image-add {
+    position: absolute;
+    margin-top: -10px;
+    margin-left: -15px;
+}
+
+.footer-main {
+    background: $red;
+    color: $white;
+}
+
+.content-separate {
+    border-bottom: 3px solid #e6001e;
 }

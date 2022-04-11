@@ -6,6 +6,10 @@
     <div id="root"></div>
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
 {% block react %}
     {{ encore_entry_script_tags('default_index') }}
 {% endblock %}
