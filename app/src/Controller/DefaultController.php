@@ -16,6 +16,15 @@ class DefaultController extends AbstractController
         return $this->render('default/index.html.twig');
     }
 
+    #[Route('/php/operators', methods: ['GET'], name: 'php_operators')]
+    public function operators(): Response
+    {
+        dump(1 <=> 2);
+        dump(1.5 <=> 1.5);
+        dd("d" <=> "a");
+        return $this->render('default/index.html.twig');
+    }
+
     #[Route('/register', name: 'user_register', options: ["expose" => true])]
     public function register(): Response
     {
