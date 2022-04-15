@@ -20,15 +20,15 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN curl -sS https://get.symfony.com/cli/installer | bash
 RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
-#RUN echo -e "\n\
-#xdebug.client_host = 172.17.0.1 \n\
-#xdebug.default_enable = 1 \n\
-#xdebug.mode=debug \n\
-#xdebug.start_with_request=yes \n\
-#xdebug.remote_handler = "dbgp" \n\
-#xdebug.client_port = 9000 \n\
-#xdebug.log = /var/www/xdebug.log \n\
-#" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo -e "\n\
+xdebug.client_host = 172.17.0.1 \n\
+xdebug.default_enable = 1 \n\
+xdebug.mode=debug \n\
+xdebug.start_with_request=yes \n\
+xdebug.remote_handler = "dbgp" \n\
+xdebug.client_port = 9000 \n\
+xdebug.log = /var/www/xdebug.log \n\
+" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 # ENV TZ Europe/Warsaw
 # RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone

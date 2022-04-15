@@ -10,17 +10,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/', methods: ['GET'], name: 'app_default', options: ["expose" => true])]
-    public function index(): Response
+    #[Route('/', name: 'app_default', options: ["expose" => true], methods: ['GET'])]
+    public function index(Request $request): Response
     {
         return $this->render('default/index.html.twig');
     }
 
-    #[Route('/php/operators', methods: ['GET'], name: 'php_operators')]
+    #[Route('/php/operators', name: 'php_operators', methods: ['GET'])]
     public function operators(): Response
     {
         dump(1 <=> 2);
-        dump(1.5 <=> 1.5);
+        dump('1.5' <=> '1.5');
         dd("d" <=> "a");
         return $this->render('default/index.html.twig');
     }
@@ -31,7 +31,7 @@ class DefaultController extends AbstractController
         return $this->render('default/register.html.twig');
     }
 
-    #[Route('/api/users', name: 'api_users', methods: ['POST'], options: ["expose" => true])]
+    #[Route('/api/users', name: 'api_users', options: ["expose" => true], methods: ['POST'])]
     public function createUser(Request $request): Response
     {
         dd($request->request->get('firstName'));
@@ -40,7 +40,7 @@ class DefaultController extends AbstractController
     }
 
 
-    #[Route('/api/books', methods: ['GET'], name: 'api_books', options: ["expose" => true])]
+    #[Route('/api/books', name: 'api_books', options: ["expose" => true], methods: ['GET'])]
     public function books(): JsonResponse
     {
         $data = [

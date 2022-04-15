@@ -14,11 +14,11 @@ class DesignPatternsController extends AbstractController
      * Podział:
      *
      * 1. Wzorce kreacyjne
-     *   1.1. Abstract Factory (Fabryka Abstrakcyjna)
-     *   1.2. Builder (Budowniczy)
+     *   1.1. Simple Factory (Prosta Fabryka)
+     *   1.2. Abstract Factory (Fabryka Abstrakcyjna)
      *   1.3. Factory Method (Metoda Wytwórcza)
-     *   1.4. Prototype (Prototyp)
-     *   1.5. Simple Factory (Prosta Fabryka)
+     *   1.4. Builder (Budowniczy)
+     *   1.5. Prototype (Prototyp)
      *   1.6. Singleton
      *
      * 2. Wzorce strukturalne
@@ -41,9 +41,8 @@ class DesignPatternsController extends AbstractController
 
 
     #https://koddlo.pl/singleton/
-    #[Route('/design-patterns/kreacyjne/singleton', methods: ['GET'], name: 'dp_singleton')]
+    #[Route('/design-patterns/kreacyjne/singleton', name: 'dp_singleton', methods: ['GET'])]
     public function singleton()
     {
-        
     }
 }
