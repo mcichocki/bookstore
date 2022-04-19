@@ -1,13 +1,22 @@
 <?php
 
-namespace App\Entity\SOLID;
+namespace App\Entity;
 
 class Person
 {
     public string $firstName;
     public string $lastName;
     public int $age;
+    public string $login;
     public string $sex;
+    public string $email;
+
+    public function __construct($firstName, $lastName, $login)
+    {
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->login = $login;
+    }
 
     /**
      * @return string
@@ -73,8 +82,19 @@ class Person
         $this->sex = $sex;
     }
 
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
 
-
-
-
+    /**
+     * @param string $email
+     */
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
 }

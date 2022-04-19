@@ -3,7 +3,8 @@ import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+const routes = require('../../../../public/js/fos_js_routes.json');
+import Routing from '/public/bundles/fosjsrouting/js/router.min.js';
 import LOGO from '../../../images/books-icon.png';
 
 class Navbar extends React.Component
@@ -26,29 +27,31 @@ class Navbar extends React.Component
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <FontAwesomeIcon icon="fa-solid fa-list-ul" /> Wybierz gatunek
+                                    <FontAwesomeIcon icon="fa-solid fa-list-ul" /> Wybierz tematykę
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="#">Kryminały</a></li>
-                                    <li><a className="dropdown-item" href="#">Horrory</a></li>
-                                    <li><a className="dropdown-item" href="#">Historyczne</a></li>
-                                    <li><a className="dropdown-item" href="#">Informatyka</a></li>
+                                    <li><a className="dropdown-item" href="#">C++</a></li>
+                                    <li><a className="dropdown-item" href="#">Python</a></li>
+                                    <li><a className="dropdown-item" href="#">PHP</a></li>
+                                    <li><a className="dropdown-item" href="#">Linux</a></li>
+                                    <li><a className="dropdown-item" href="#">Sieci</a></li>
+                                    <li><a className="dropdown-item" href="#">Hacking</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#"><FontAwesomeIcon icon="fa-solid fa-book-open" /> Aktualna gazetka</a>
                             </li>
                         </ul>
-                        <div className="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+                        <div className="collapse navbar-collapse flex-grow-1 text-right" id="navbarSupportedContent">
                             <ul className="navbar-nav ms-auto flex-nowrap">
                                 <li className="nav-item">
-                                    <a className="nav-link m-2 menu-item" href="#"><FontAwesomeIcon icon="fa-solid fa-user" /> Moje konto</a>
+                                    <a className="nav-link m-2 menu-item" href={Routing.generate("app_login")}><FontAwesomeIcon icon="fa-solid fa-user" /> Moje konto</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link m-2 menu-item" href="#"><FontAwesomeIcon icon="fa-regular fa-star" /> Ulubione</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link m-2 menu-item" href="#"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" /> Koszyk (0)</a>
+                                    <a className="nav-link m-2 menu-item" href={Routing.generate("app_cart")}><FontAwesomeIcon icon="fa-solid fa-cart-shopping" /> Koszyk (0)</a>
                                 </li>
                             </ul>
                         </div>

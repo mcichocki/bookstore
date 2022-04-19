@@ -4,10 +4,12 @@ RUN apt-get update && apt-get install -y zlib1g-dev g++ git libpng-dev librabbit
     && docker-php-ext-install intl opcache pdo bcmath sockets pdo_mysql gd  \
     && pecl install apcu \
     && pecl install amqp \
+    && pecl install redis \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && docker-php-ext-enable apcu \
     && docker-php-ext-enable amqp \
+    && docker-php-ext-enable redis \
     && docker-php-ext-configure zip \
     && docker-php-ext-install zip
 
@@ -20,9 +22,12 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN curl -sS https://get.symfony.com/cli/installer | bash
 RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
+#RUN pecl install -o -f redis \
+#&&  rm -rf /tmp/pear \
+#&&  echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
+
 RUN echo -e "\n\
 xdebug.client_host = 172.17.0.1 \n\
-xdebug.default_enable = 1 \n\
 xdebug.mode=debug \n\
 xdebug.start_with_request=yes \n\
 xdebug.remote_handler = "dbgp" \n\

@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,9 +12,51 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/', name: 'app_default', options: ["expose" => true], methods: ['GET'])]
-    public function index(Request $request): Response
+    private $mailer;
+
+    public function __construct(MailerInterface $mailer)
     {
+        $this->mailer = $mailer;
+    }
+
+    #[Route('/', name: 'app_default', options: ["expose" => true], methods: ['GET'])]
+    public function index(): Response
+    {
+//        $email = (new Email())
+//            ->from('bookstore.app.pl@gmail.com')
+//            ->to('cichocki.programmer@gmail.com')
+//            ->subject('Zamówienie zostało złożone')
+//            ->text('Dziękujemy za złożenie zamówienia w naszej księgarni.');
+//        $this->mailer->send($email);
+//
+//        $email = (new Email())
+//            ->from('bookstore.app.pl@gmail.com')
+//            ->to('cichocki.programmer@gmail.com')
+//            ->subject('Zamówienie gotowe do wysyłki')
+//            ->text('Twoja paczka czeka na odebranie przez kuriera.');
+//        $this->mailer->send($email);
+//
+//        $email = (new Email())
+//            ->from('bookstore.app.pl@gmail.com')
+//            ->to('cichocki.programmer@gmail.com')
+//            ->subject('Zamówienie wyruszyło w drogę')
+//            ->text('Twoja paczka jest w drodze do paczkomatu...');
+//        $this->mailer->send($email);
+//
+//        $email = (new Email())
+//            ->from('bookstore.app.pl@gmail.com')
+//            ->to('cichocki.programmer@gmail.com')
+//            ->subject('Zamówienie gotowe do odebrania')
+//            ->text('Twoja paczka czeka już na odbiór, lepiej się pospiesz bo jest niecierpliwa ;)');
+//        $this->mailer->send($email);
+//
+//        $email = (new Email())
+//            ->from('bookstore.app.pl@gmail.com')
+//            ->to('cichocki.programmer@gmail.com')
+//            ->subject('Zamówienie odebrane')
+//            ->text('Dziękujemy za zakupy w naszej księgarni. Zapraszamy ponownie!');
+//        $this->mailer->send($email);
+
         return $this->render('default/index.html.twig');
     }
 
