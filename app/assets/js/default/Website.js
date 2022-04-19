@@ -9,10 +9,10 @@ import Footer from './components/Footer';
 
 const routes = require('../../../public/js/fos_js_routes.json');
 import Routing from '/public/bundles/fosjsrouting/js/router.min.js';
-
-import 'bootstrap/dist/js/bootstrap.js';
-
 Routing.setRoutingData(routes);
+
+// import 'bootstrap/dist/js/bootstrap.js';
+
 class Website extends React.Component {
     render() {
         return(

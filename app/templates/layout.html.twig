@@ -4,7 +4,7 @@
     {% if app.user %}
         <div class="wrapper">
             {% block navbar %}
-                {% include 'website/navbar.html.twig' %}
+                {% include 'app/navbar.html.twig' %}
             {% endblock %}
 
 {#            {% block sidebar %}#}
@@ -12,12 +12,14 @@
 {#            {% endblock %}#}
 
             <div class="content-wrapper">
-                {% block body %}{% endblock %}
+                <div class="container mt-4 mb-4 p-3" style="background-color: #fff;">
+                    {% block body %}{% endblock %}
+                </div>
             </div>
 
-{#            {% block footer %}#}
-{#                {% include 'website/footer.html.twig' %}#}
-{#            {% endblock %}#}
+            {% block footer %}
+                {% include 'app/footer.html.twig' %}
+            {% endblock %}
         </div>
     {% else %}
         {% block login %}{% endblock %}

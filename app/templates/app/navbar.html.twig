@@ -1,0 +1,83 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark nav-background">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('app_default') }}">Księgarnia <img src="{{ asset('build/images/books-icon.png') }}" alt="Logo" style="width: 40px;" class="rounded-pill" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    {#                {/*<li class="nav-item">*/}#}
+    {#                    {/*    <a class="nav-link active" aria-current="page" href="#">Home</a>*/}#}
+    {#                    {/*</li>*/}#}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="fa-solid fa-list-ul"></span> Wybierz tematykę
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">C++</a></li>
+                            <li><a class="dropdown-item" href="#">Python</a></li>
+                            <li><a class="dropdown-item" href="#">PHP</a></li>
+                            <li><a class="dropdown-item" href="#">Linux</a></li>
+                            <li><a class="dropdown-item" href="#">Sieci</a></li>
+                            <li><a class="dropdown-item" href="#">Hacking</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="fa-solid fa-book-open"></span> Aktualna gazetka</a>
+                    </li>
+                </ul>
+                <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto flex-nowrap">
+                        {% if not app.user %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="fa-solid fa-user"></span> Moje konto
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser">
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-lock"></i> Logowanie</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-plus"></i> Rejestracja</a></li>
+                            </ul>
+                        </li>
+                        {% else %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="fa-solid fa-user"></span> {{ app.user.firstName }}
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser">
+                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-gear"></i> Moje konto</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                                        <li><a class="dropdown-item" href="{{ path('app_logout') }}"><i class="fa-solid fa-right-from-bracket"></i> Wyloguj</a></li>
+                                    {% endif %}
+                                </ul>
+                            </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link menu-item" href="#"><span class="fa-regular fa-star"></span> Ulubione</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-item" href="{{ path('app_cart') }}"><span class="fa-solid fa-cart-shopping"></span> Koszyk (0)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="header-main">
+        <div class="container">
+            <div>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Szukaj w bazie" aria-label="Szukaj w bazie" />
+                    <button class="btn btn-danger" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Wyszukaj</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>

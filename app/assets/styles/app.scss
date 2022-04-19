@@ -5,6 +5,7 @@
 
 $white: #fff;
 $red: #ce0422;
+$black: #000;
 
 body {
     background-color: #ebebeb;
@@ -50,7 +51,7 @@ body {
 }
 
 .page-menu li a {
-    color: #000;
+    color: $black;
     text-decoration: none;
     text-align: left;
     display: block;
@@ -59,7 +60,7 @@ body {
 }
 
 .page-menu li a:hover {
-    color: #000;
+    color: $black;
     font-weight: bold;
     text-decoration: underline;
 }
@@ -101,4 +102,25 @@ body {
 
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255,255,255,1);
+}
+
+.card-box-adding {
+    //float: center;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #ce0422;
+}
+
+.card-box-adding:hover {
+    background-color: #A4031B;
+}
+
+.book-link {
+    color: $black;
+    text-decoration: none;
+}
+
+.book-link:hover {
+    color: $black;
+    text-decoration: underline;
 }

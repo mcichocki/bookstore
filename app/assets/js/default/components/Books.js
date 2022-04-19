@@ -31,7 +31,7 @@ class Books extends React.Component
                             <img className="direct-chat-img image-cover" width="145" height="205" src={JCPPKW} />
                         </div>
                         <div className="col-md-4 col-xs-12 col-sm-6">
-                            <h6 style={{fontWeight: "bold", fontSize: "19px" }}>Język C++. Kompendium wiedzy. Wydanie IV</h6>
+                            <h6 style={{fontWeight: "bold", fontSize: "19px" }}><a href="#" className="book-link">Język C++. Kompendium wiedzy. Wydanie IV</a></h6>
                             <div className="promotion">Promocja</div>
                             <ul className="offer-list">
                                 <li><span style={{ color: "gray" }}>Wydawnictwo:</span> Helion</li>
@@ -66,7 +66,7 @@ class Books extends React.Component
                                 <span style={{float:"right", fontWeight: "bold", fontSize: "22px", color:"#ce0422"}}>75,50 zł</span>
                                 <span style={{float:"right", fontWeight: "bold", marginRight:"5px", fontSize: "15px", color:"gray"}}><del>125,50 zł</del></span>
                                 <br/><br /><br />
-                                <span  style={{float:"center", fontSize: "20px", padding: "10px", backgroundColor:"#ce0422" }}>
+                                <span className="card-box-adding">
                                     <a href="#" style={{color: "#fff", textDecoration: "none" }}><FontAwesomeIcon icon="fa-solid fa-cart-shopping" /> Dodaj do koszyka</a>
                                 </span>
                                 <br/><br />

@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Remember;
 
 use App\Entity\Invoice;
-use App\Entity\Person;
 use App\Entity\InvoiceCollection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;

@@ -89,7 +89,7 @@ services:
     bookstore-redis-service:
         container_name: bookstore-redis-container
         image: redis:alpine
-        command: redis-server /usr/local/etc/redis/redis.conf --requirepass mypassword
+        command: redis-server /usr/local/etc/redis/redis.conf --requirepass secret
         ports:
             - "6379:6379"
         volumes:
