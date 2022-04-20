@@ -80,38 +80,93 @@ class DefaultController extends AbstractController
         $data = [
             [
                 "id" => 1,
-                "title" => "Władca Pierścieni",
-                "author" => "J.R.R. Tolkien"
+                "type" => "Książka",
+                "group" => "cpp",
+                "tags" => ["cpp", "book", "programming"],
+                "title" => "Język C++. Kompendium wiedzy. Wydanie IV",
+                "icon" => "fa-solid fa-book",
+                "author" => "Bjarne Stroustrup",
+                "publisher" => "Helion",
+                "releaseDate" => "2014-07-10",
+                "print" => "oprawa twarda",
+                "pages" => "1296",
+                "price" => "125.50",
+                "stars" => 6,
+                "opinions" => "",
+                "image" => "build/images/jcppkw.jpeg",
+                "description" => "",
+                "details" => "",
+                "contents" => "",
+                "amount" => 10,
+                "extra" => [
+                    "promotions" => true,
+                    "promotions_image" => "build/images/dopisek-raty-0.png",
+                    "installment" => true,
+                    "countOpinions" => 21,
+                    "promotionPrice" => "75.50",
+                    "shipping" => "Wysyłamy w 24h",
+                    "availability" => "Powiadom o dostępności audiobooka"
+                ]
             ],
             [
                 "id" => 2,
-                "title" => "Symfonia C++",
-                "author" => "Jerzy Grębosz"
+                "type" => "Ebook",
+                "group" => "cpp",
+                "tags" => ["cpp", "book", "programming"],
+                "title" => "Język C++. Kompendium wiedzy. Wydanie IV",
+                "icon" => "fa-solid fa-tablet-screen-button",
+                "author" => "Bjarne Stroustrup",
+                "publisher" => "Helion",
+                "releaseDate" => "2014-07-10",
+                "print" => "oprawa twarda",
+                "pages" => "1296",
+                "price" => "125.50",
+                "stars" => 6,
+                "opinions" => "",
+                "image" => "build/images/bhpyth.jpeg",
+                "description" => "",
+                "details" => "",
+                "contents" => "",
+                "amount" => 10,
+                "extra" => [
+                    "promotions" => true,
+                    "promotions_image" => "build/images/dopisek-raty-0.png",
+                    "installment" => true,
+                    "countOpinions" => 21,
+                    "promotionPrice" => "75.50",
+                    "shipping" => "Wysyłamy w 24h",
+                    "availability" => "Powiadom o dostępności audiobooka"
+                ]
             ],
             [
                 "id" => 3,
-                "title" => "PHP. Obiekty, wzorce, narzędzia.",
-                "author" => "Matt Zandstra"
-            ],
-            [
-                "id" => 4,
-                "title" => "Python. Wprowadzenie",
-                "author" => "Mark Lutz"
-            ],
-            [
-                "id" => 5,
-                "title" => "Hack Wars",
-                "author" => "John Chirillo"
-            ],
-            [
-                "id" => 6,
-                "title" => "Język C++. Szkoła programowania.",
-                "author" => "Stephen Prata"
-            ],
-            [
-                "id" => 7,
-                "title" => "Język C++. Szkoła programowania 2.",
-                "author" => "Stephen Prata"
+                "type" => "Audio",
+                "group" => "cpp",
+                "tags" => ["cpp", "book", "programming"],
+                "title" => "Język C++. Kompendium wiedzy. Wydanie IV",
+                "icon" => "fa-solid fa-compact-disc",
+                "author" => "Bjarne Stroustrup",
+                "publisher" => "Helion",
+                "releaseDate" => "2014-07-10",
+                "print" => "oprawa twarda",
+                "pages" => "1296",
+                "price" => "125.50",
+                "stars" => 6,
+                "opinions" => "",
+                "image" => "build/images/czykov.jpeg",
+                "description" => "",
+                "details" => "",
+                "contents" => "",
+                "amount" => 10,
+                "extra" => [
+                    "promotions" => true,
+                    "promotions_image" => "build/images/dopisek-raty-0.png",
+                    "installment" => true,
+                    "countOpinions" => 21,
+                    "promotionPrice" => "75.50",
+                    "shipping" => "Wysyłamy w 24h",
+                    "availability" => "Powiadom o dostępności książki"
+                ]
             ]
         ];
 
