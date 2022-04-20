@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block website %}
-    {% if app.user %}
+{#    {% if app.user %}#}
         <div class="wrapper">
             {% block navbar %}
                 {% include 'app/navbar.html.twig' %}
@@ -17,12 +17,14 @@
                 </div>
             </div>
 
+{#            {% block login %}{% endblock %}#}
+
             {% block footer %}
                 {% include 'app/footer.html.twig' %}
             {% endblock %}
         </div>
-    {% else %}
-        {% block login %}{% endblock %}
-    {% endif %}
+{#    {% else %}#}
+{#        #}
+{#    {% endif %}#}
 {% endblock %}
 

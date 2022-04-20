@@ -18,12 +18,12 @@
                             <span class="fa-solid fa-list-ul"></span> Wybierz tematykę
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">C++</a></li>
-                            <li><a class="dropdown-item" href="#">Python</a></li>
-                            <li><a class="dropdown-item" href="#">PHP</a></li>
-                            <li><a class="dropdown-item" href="#">Linux</a></li>
-                            <li><a class="dropdown-item" href="#">Sieci</a></li>
-                            <li><a class="dropdown-item" href="#">Hacking</a></li>
+                            <li><a class="dropdown-item" href="{{ path('website_menu', {'group': 'cpp'}) }}">C++</a></li>
+                            <li><a class="dropdown-item" href="{{ path('website_menu', {'group': 'python'}) }}">Python</a></li>
+                            <li><a class="dropdown-item" href="{{ path('website_menu', {'group': 'php'}) }}">PHP</a></li>
+                            <li><a class="dropdown-item" href="{{ path('website_menu', {'group': 'linux'}) }}">Linux</a></li>
+                            <li><a class="dropdown-item" href="{{ path('website_menu', {'group': 'networks'}) }}">Sieci</a></li>
+                            <li><a class="dropdown-item" href="{{ path('website_menu', {'group': 'hacking'}) }}">Hacking</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

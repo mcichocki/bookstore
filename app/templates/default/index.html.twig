@@ -1,15 +1,80 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}{{ parent() }}{% endblock %}
 
 {% block body %}
-    <div id="root"></div>
+{#    <div id="root"></div>#}
+
+    <div class="container mt-4 mb-4" style="background-color:#fff">
+        <div class="p-3">
+            <div>
+                {% for book in books %}
+                <div class="row mb-3">
+                    <div class="col-md-2 col-xs-12 col-sm-6">
+                        <img class="direct-chat-img image-cover" width="145" height="205" src="{{ asset(book.image) }}" />
+                    </div>
+                    <div class="col-md-4 col-xs-12 col-sm-6">
+                        <h6 style="font-weight: bold; font-size: 19px"><a href="#" class="book-link">{{ book.title }}</a>
+                        </h6>
+                        <div class="promotion">Promocja</div>
+                        <ul class="offer-list">
+                            <li><span style="color: gray">Wydawnictwo:</span> {{ book.publisher }}</li>
+                            <li><span style="color: gray">Ocena:</span>
+                                <span style="padding-left: 5px">
+                                    <i class="fa-solid fa-star" style="color: #F6D300"></i>
+                                    <i class="fa-solid fa-star" style="color: #F6D300"></i>
+                                    <i class="fa-solid fa-star" style="color: #F6D300"></i>
+                                    <i class="fa-solid fa-star" style="color: #F6D300"></i>
+                                    <i class="fa-solid fa-star" style="color: #F6D300"></i>
+                                    <i class="fa-solid fa-star" style="color: #AFA4AF"></i>
+                                </span>
+                            </li>
+                            <li><span style="color: gray">Autor:</span> {{ book.author }}</li>
+                            <li><span style="color: gray">Data premiery:</span> {{ book.releaseDate }}</li>
+                            <li><span style="color: gray">Druk:</span> {{ book.print }}</li>
+                            <li><span style="color: gray">Liczba stron:</span> {{ book.pages }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-xs-12 col-sm-6">
+                        <img src="{{ book.extra.promotions_image }}" />
+                        <ul class="page-menu mt-4 float-left">
+                            <li><a href="#">Opis książki</a></li>
+                            <li><a href="#">Opinie ({{ book.extra.countOpinions }})</a></li>
+                            <li><a href="#">Szczegóły książki</a></li>
+                            <li><a href="#">Spis treści</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 text-center col-xs-12 col-sm-6">
+                        <div class="book-type-price" style="padding: 8px">
+                            <span style="float:left; font-weight:bold; font-size: 20px; color: #303030"><i class={{ book.icon }}></i> {{ book.type }}</span>
+                            <span style="float: right; font-weight: bold; font-size: 22px; color: #ce0422">{{ book.extra.promotionPrice }} zł</span>
+                            <span style="float: right; font-weight: bold; margin-right: 5px; font-size: 15px; color: gray"><del>{{ book.price }} zł</del></span>
+                            <br/><br/><br/>
+                            <span class="card-box-adding">
+                                <a href="#" style="color: #fff; text-decoration: none">
+                                    <i class="fa-solid fa-cart-shopping"></i> Dodaj do koszyka
+                                </a>
+                            </span>
+                            <br/><br/>
+                            <span style="font-size: 16px; color: #04AA6D">{{ book.extra.shipping }}</span>
+                            <br/>
+                            <span style="font-size: 14px">{{ book.extra.availability }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-line"></div>
+                <br/>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
 {% endblock %}
 
-{% block react %}
-    {{ encore_entry_script_tags('default_index') }}
-{% endblock %}
+{#{% block react %}#}
+{#    {{ encore_entry_script_tags('default_index') }}#}
+{#{% endblock %}#}

@@ -1,40 +1,71 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}{{ parent() }} - Logowanie{% endblock %}
 
 {% block body %}
     <div class="container">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="login-form bg-white mt-4" style="padding-right: 87px; border-right: 1px solid #dedede;">
+                    <form method="post" class="row g-3">
+                        <h1 class="h3 mb-3 font-weight-normal">Zaloguj się</h1>
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                        <div class="col-12">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" name="email" id="inputEmail" class="form-control" value="{{ last_username }}" required autofocus>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="inputPassword">Hasło</label>
+                            <input type="password" name="password" id="inputPassword" class="form-control" required>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <label>
+                                <input type="checkbox" name="_remember_me" class="form-check-input"> Zapamiętaj mnie
+                            </label>
+                        </div>
+
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                        <div class="col-12">
+                            <button class="btn btn-danger float-end" type="submit">
+                                Zaloguj się
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6" style="padding-left: 90px;">
+                <p><b>Nie masz jeszcze konta w księgarni BookStore?</b></p>
+                <button class="btn btn-danger mb-2" style="border-radius: 0px;">Zarejestruj się</button><br><br>
+                <p><b>Co zyskasz zakładając konto?</b></p>
+                <ul>
+                    <li>Wspólny dostęp do wszystkich serwisów,</li>
+                    <li>Zawsze aktualne informacje o statusie i realizacji Twoich zamówień,</li>
+                    <li>Wygodny wgląd w dokładną historię swoich zakupów,</li>
+                    <li>Przechowalnie i wirtualne półki do których dodasz swoje ulubione książki,</li>
+                    <li>Dostęp do swojego koszyka z dowolnego komputera, tabletu, czy smartfona,</li>
+                    <li>Unikalne promocje, okazje i rabaty - tylko dla zalogowanych,</li>
+                    <li>Wirtualną Bibliotekę, którą możesz mieć zawsze pod ręką.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <img src="{{ asset('build/images/banner1.jpeg') }}" class="w-100">
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
         <div class="row">
-            <div class="login-form bg-light mt-4 p-4">
-                <form method="post" class="row g-3">
-                    <h1 class="h3 mb-3 font-weight-normal">Proszę się zalogować</h1>
-                    {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
-                    <div class="col-12">
-                        <label for="inputEmail">Email</label>
-                        <input type="email" name="email" id="inputEmail" class="form-control" value="{{ last_username }}" required autofocus>
-                    </div>
+            <div class="col-md-6">
 
-                    <div class="col-12">
-                        <label for="inputPassword">Hasło</label>
-                        <input type="password" name="password" id="inputPassword" class="form-control" required>
-                    </div>
-
-{#                    <div class="form-check mb-3">#}
-{#                        <label>#}
-{#                            <input type="checkbox" name="_remember_me" class="form-check-input"> Zapamiętaj mnie#}
-{#                        </label>#}
-{#                    </div>#}
-
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-                    <div class="col-12">
-                        <button class="btn btn-primary float-end" type="submit">
-                            Zaloguj się
-                        </button>
-                    </div>
-                </form>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ asset('build/images/paczkomat.png') }}" class="w-100">
             </div>
         </div>
     </div>

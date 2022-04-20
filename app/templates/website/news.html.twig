@@ -71,5 +71,21 @@
             </ul>
         </div>
     </div>
+    <div class="row">
+        <div class="owl-carousel owl-theme">
+            {% for book in books %}
+                <div>
+                    <a href="{{ path('website_menu', {'group': book.url}) }}">
+                        <div class="style-box">
+                            <img src="{{ asset(book.thumbnail) }}" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="text text-center">{{ book.name }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock %}
